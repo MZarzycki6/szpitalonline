@@ -1,0 +1,107 @@
+swagger: "2.0"
+info: 
+  description: "Zarejestruj się i odbierz wyniki badań"
+  version: "1.0"
+  title: "Szpital"
+
+schemes:
+- "https"
+- "http"
+paths:
+  /dateslist:
+    get:
+      tags:
+      - "Rejestracja"
+      summary: "Uzyskaj dostępne terminy"
+      operationId: "getdates"
+      produces:
+      - "application/json"
+      responses:
+        '200':
+          description: Terminy udostępnione prawidłowo
+          schema:
+            $ref: '#/definitions/Date'
+            
+        '500': 
+          description: Brak możliwości udostępnienia terminów w chwili obecnej
+    post:
+      tags:
+      - "Rejestracja"
+      summary: "Zarezerwuj termin"
+      operationId: "postdates"
+      security:
+        - basicAuth: []
+      produces:
+      - "application/json"
+      consumes: 
+      - "application/json"
+      parameters:
+        - in: body
+          name: date
+          description: Data do zarezerwowania
+          schema:
+            $ref: '#/definitions/Date'
+      responses:
+        '200':
+          description: Termin zarezerwowany prawidlowo
+          schema:
+            $ref: '#/definitions/Date'
+            
+        '500': 
+          description: Wystapil blad w trakcie rezerwacji, spróbuj ponownie
+  
+  /labresults/{username}:
+    get:
+      tags:
+      - "Wyniki badań"
+      summary: "Uzyskaj rezultaty badan"
+      operationId: "getlabresults"
+      produces:
+      - "application/json"
+      security:
+        - basicAuth: []
+      parameters:
+        - name: username
+          in: path
+          description: username
+          type: string
+          required: true
+      responses:
+        '200':
+          description: Przedstawiono wyniki badań
+          schema:
+            $ref: '#/definitions/LabResults'
+        '400': 
+          description: niepoprawnie podany użytkownik
+        '500': 
+          description: Brak możliwości udostępnienia wyników w chwili obecnej
+          
+securityDefinitions:
+  basicAuth:
+    type: basic  
+    
+definitions:
+  Date:
+    type: "object"
+    properties:
+      termin:
+        type: "string"
+        format: "date"
+    xml:
+      name: "Date"
+  LabResults:
+    type: "object"
+    properties:
+      Name:
+        type: "string"
+      TestType:
+        type: "string"
+      TestDate: 
+        type: "string"
+        format: "date"
+      Status:
+        type: "string"
+    xml:
+      name: "LabResults"
+ 
+  

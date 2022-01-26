@@ -1,0 +1,3 @@
+Szpital 
+- internetowa rejestracja na wizyte
+- wydawanie wynikow badan na podstawie uwierzytelnienia
