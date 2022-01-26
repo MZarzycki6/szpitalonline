@@ -13,7 +13,7 @@ hmac key "123456"
 ## Funkcje
 Wyświetlanie dostępnych terminów GET /dateslist
 
-Rezerwacja terminu POST /dateslist (data w formacie plaintext w body), konieczność dodania headera X-HMAC-SIGNATURE wraz z treścią body zakodowaną z kluczem "123456" celem weryfikacji integralnosci
+Rezerwacja terminu POST /dateslist (data w formacie plaintext w body jako np. 2000-01-01), konieczność dodania headera X-HMAC-SIGNATURE wraz z treścią body zakodowaną z kluczem "123456" celem weryfikacji integralnosci
 
 wyświetlanie wyników badań pacjentów GET /labresults/{name}, w zamockowano w celach testowych wyniki dla "JanKowalski", "PawelNowak" oraz "AnnaPrzykladowa"
 
