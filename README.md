@@ -1,5 +1,10 @@
 # Aplikacja dla klientów szpitala
 
+## Założenia teoretyczne
+Github projektu dostępny pod adresem https://github.com/MZarzycki6/szpitalonline
+
+Aplikacja ma symulować interakcję pacjenta z wewnętrznym systemem szpitala, z którego pobierałaby dane dotyczące terminów wizyt oraz wyników badań i umożliwiałaby ich wyświetlenie i interakcję z wewnętrznym systemem szpitala poprzez rezerwację wybranej date sposód listy wyślwietlonych wcześniej dostępnych dat.
+
 ## Dane
 adres: https://szpitalonlinezm.herokuapp.com
 
