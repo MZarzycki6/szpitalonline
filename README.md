@@ -5,7 +5,7 @@ adres: https://szpitalonlinezm.herokuapp.com
 
 hmac generator: https://www.devglan.com/online-tools/hmac-sha256-online
 
-dane logowania przez basic auth: header AUTHORIZATION, login "fajnylogin", hasło "trudnehaslo"
+dane logowania przez basic auth: header Authorization, login "fajnylogin", hasło "trudnehaslo"
 Basic ZmFqbnlsb2dpbjp0cnVkbmVoYXNsbw==
 
 hmac key "123456"
